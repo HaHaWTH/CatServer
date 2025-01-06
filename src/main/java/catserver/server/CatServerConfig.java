@@ -56,8 +56,9 @@ public class CatServerConfig {
     public boolean disableAsyncCatchWarn = false;
     public boolean versionCheck = true;
 
+    public boolean regatherCapabilityOnRespawn = false;
+    public boolean simulateVanillaRespawn = false;
     public boolean bridgeForgeExplosionEventToBukkit = false;
-    public boolean callConstructCapabilityEventOnRespawn = false;
 
     public CatServerConfig(String file) {
         this.configFile = new File(file);
@@ -107,8 +108,9 @@ public class CatServerConfig {
         disableFMLHandshake = getOrWriteBooleanConfig("network.fml.disableHandshake", config.getBoolean("disableFMLHandshake", disableFMLHandshake));
         disableFMLStatusModInfo = getOrWriteBooleanConfig("network.fml.disableStatusModInfo", config.getBoolean("disableFMLStatusModInfo", disableFMLStatusModInfo));
         // compatibility
+        regatherCapabilityOnRespawn = getOrWriteBooleanConfig("compatibility.regatherCapabilityOnRespawn", regatherCapabilityOnRespawn);
+        simulateVanillaRespawn = getOrWriteBooleanConfig("compatibility.simulateVanillaRespawn", simulateVanillaRespawn);
         bridgeForgeExplosionEventToBukkit = getOrWriteBooleanConfig("compatibility.bridgeForgeExplosionEventToBukkit", bridgeForgeExplosionEventToBukkit);
-        callConstructCapabilityEventOnRespawn = getOrWriteBooleanConfig("compatibility.callConstructCapabilityEventOnRespawn", callConstructCapabilityEventOnRespawn);
         // general
         disableUpdateGameProfile = getOrWriteBooleanConfig("disableUpdateGameProfile", disableUpdateGameProfile);
         disableAsyncCatchWarn = getOrWriteBooleanConfig("disableAsyncCatchWarn", disableAsyncCatchWarn);
